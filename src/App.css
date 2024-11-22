@@ -19,57 +19,108 @@
   
   /* Header Styles */
   header {
-    background-color: var(--main-color-1);
-    color: var(--highlight-color-1);
+    background-color: var(--highlight-color-1);
     padding: 20px;
     text-align: center;
   }
+
+  .App-logo {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+  }
   
-  /* Nav Styles */
+  
+/* Nav Styles */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: var(--highlight-color-1);
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap between the items as needed */
+}
+
+nav ul li {
+  display: inline-flex;
+}
+
+nav ul li a {
+  color: var(--main-color-1); /* Adjusted color for better visibility */
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  font-size: 18pt; /* Adjust this value to make the font bigger */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+nav ul li a:hover {
+  color: var(--secondary-color-1); /* Change this to your desired hover color */
+}
+
+@media (max-width: 768px) {
   nav ul {
-    list-style-type: none;
-    padding: 0;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
+
   nav ul li a {
-    color: var(--main-color-2); /* Adjusted color for better visibility */
-    text-decoration: none;
-    font-weight: bold;
+    font-size: 14pt; /* Reduce the font size on smaller screens */
+    padding: 10px; /* Adjust padding as needed */
   }
-  
+}
+
   /* Main Styles */
   main {
     padding: 20px;
   }
   
-  /* CallToAction Styles */
+/* CallToAction Styles */
+.call-to-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-color: var(--secondary-color-2);
+  border-radius: 10px;
+}
+
+.call-to-action .cta-text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.call-to-action .cta-image {
+  flex: 1;
+}
+
+.call-to-action .cta-image img {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
   .call-to-action {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 40px;
-    background-color: var(--secondary-color-2);
-    border-radius: 10px;
   }
-  
-  .call-to-action .cta-text {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
   .call-to-action .cta-image {
-    flex: 1;
+    order: -1; /* Move the image above the text */
+    margin-bottom: 20px;
   }
-  
-  .call-to-action .cta-image img {
-    max-width: 100%;
-    border-radius: 10px;
+  .call-to-action .cta-text {
+    margin-right: 0;
   }
+}
   
   .call-to-action .headline {
     font-family: 'Markazi Text', serif;
@@ -81,14 +132,14 @@
   
   .call-to-action .subtitle {
     font-family: 'Markazi Text', serif;
-    font-size: 40pt;
+    font-size: 18pt;
     color: var(--main-color-1);
   }
   
   .call-to-action .reserve-button {
     font-family: 'Karla', sans-serif;
     font-size: 16pt;
-    background-color: var(--main-color-2);
+    background-color: var(--main-color-1);
     color: var(--highlight-color-1);
     border: none;
     padding: 10px 20px;
@@ -101,14 +152,10 @@
   }
   
   /* Specials Styles */
-  .specials {
-    padding: 40px;
-    background-color: var(--highlight-color-1);
-  }
-  
   .specials-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* Allow the cards to wrap to the next line */
   }
   
   .special-card {
@@ -120,38 +167,68 @@
     margin: 0 10px;
   }
   
-  .special-card img {
-    max-width: 100%;
+  .special-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3; /* This sets a 4:3 aspect ratio */
+    object-fit: cover;
     border-radius: 10px;
   }
   
-  .special-card .card-title {
+  @media (max-width: 768px) {
+    .special-card {
+      flex: 1 1 100%; /* Make each card take up the full width on smaller screens */
+      margin: 10px 0; /* Adjust the margin as needed */
+    }
+    .special-image {
+      width: 250px;
+      height: auto;
+      aspect-ratio: 4 / 3; /* This sets a 4:3 aspect ratio */
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+  
+  .card-title {
     font-family: 'Markazi Text', serif;
     font-size: 18pt;
     font-weight: bold;
     line-height: 1.5;
     color: var(--main-color-1);
   }
-  
-  /* CustomersSay Styles */
-  .customers-say {
-    padding: 40px;
-    background-color: var(--highlight-color-1);
-  }
-  
-  .testimonials-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
+
+/* CustomersSay Styles */
+.customers-say {
+  padding: 40px;
+  background-color: var(--highlight-color-1);
+}
+
+.testimonials-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background-color: var(--secondary-color-2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.review {
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
   .testimonial-card {
-    background-color: var(--secondary-color-2);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    flex: 1;
-    margin: 0 10px;
+    flex: 1 1 100%;
+    margin: 10px 0;
   }
+}
+
   
   .testimonial-card .card-title {
     font-family: 'Markazi Text', serif;
@@ -161,23 +238,35 @@
     color: var(--main-color-1);
   }
   
-  /* Chicago Styles */
+/* Chicago Styles */
+.chicago {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: var(--highlight-color-1);
+  flex-wrap: wrap;
+}
+
+.chicago-column {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.chicago .logo {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
   .chicago {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px;
-    background-color: var(--highlight-color-1);
+    flex-direction: column;
+    align-items: center;
   }
-  
   .chicago-column {
-    flex: 1;
-    margin: 0 10px;
+    margin: 10px 0;
   }
-  
-  .chicago .logo {
-    max-width: 100%;
-    border-radius: 10px;
-  }
+}
+
   
   .chicago-column ul {
     list-style-type: none;
@@ -193,12 +282,45 @@
     text-decoration: none;
     font-weight: bold;
   }
-  
+
+  .chicago-column .card-title {
+    text-align: center;
+  }
+
   /* BookingPage Styles */
   #booking {
     padding: 40px;
     background-color: var(--highlight-color-1);
   }
+
+  /* Styles for the BookingPage */
+#booking {
+  padding: 40px;
+  background-color: var(--highlight-color-1);
+}
+
+.headline {
+  font-family: 'Markazi Text', serif;
+  font-size: 24pt;
+  font-weight: bold;
+  color: var(--main-color-1); /* Change this to your desired color */
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  color: var(--main-color-1); /* Change this to your desired color */
+  margin-bottom: 20px;
+}
+
+.additional-info {
+  font-family: 'Karla', sans-serif;
+  font-size: 14pt;
+  color: var(--main-color-1); /* Change this to your desired color */
+  margin-top: 20px;
+}
+
   
   .booking-form {
     display: grid;
@@ -252,3 +374,90 @@
     text-align: center;
   }
   
+/* BookingPage Styles */
+#booking {
+  padding: 2px;
+  background-color: var(--highlight-color-1);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--highlight-color-1);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+}
+
+.booking-form label,
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.booking-form legend {
+  font-family: 'Markazi Text', serif;
+  font-size: 24pt;
+  font-weight: bold;
+  color: var(--main-color-1);
+  margin-bottom: 10px;
+}
+
+.booking-form label {
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  margin-bottom: 5px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  font-family: 'Karla', sans-serif;
+  font-size: 14pt;
+  padding: 10px;
+  border: 1px solid var(--highlight-color-2);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.booking-form button {
+  background-color: var(--main-color-1);
+  color: var(--highlight-color-1);
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16pt;
+}
+
+.booking-form button:hover {
+  background-color: var(--secondary-color-1);
+}
+
+.error-message {
+  color: red;
+  font-size: 12pt;
+  margin-top: -15px;
+  margin-bottom: 20px;
+}
+
+.mandatory::after {
+  content: '*';
+  color: red;
+  margin-left: 5px;
+}

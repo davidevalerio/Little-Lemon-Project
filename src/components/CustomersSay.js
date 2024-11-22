@@ -2,10 +2,10 @@ import React from 'react';
 
 function CustomersSay() {
   const testimonials = [
-    { id: 1, name: 'Customer 1', rating: 5, review: 'Amazing food!' },
-    { id: 2, name: 'Customer 2', rating: 4, review: 'Great service!' },
-    { id: 3, name: 'Customer 3', rating: 5, review: 'Will come again!' },
-    { id: 4, name: 'Customer 4', rating: 5, review: 'Best experience ever!' },
+    { id: 1, name: 'Fabrizio Fabrizi', review: 'Amazing food! Bellissimo Amore Mio!' },
+    { id: 2, name: 'Roger Ghino', review: 'Great service! Incredible Carbonara' },
+    { id: 3, name: 'Sarah Jessica Perker', review: 'Will come again! Thanks guys' },
+    { id: 4, name: 'Donatella Spinnaker', review: 'Best experience ever! I love my Little Lemon' },
   ];
 
   return (
@@ -15,8 +15,7 @@ function CustomersSay() {
         {testimonials.map(testimonial => (
           <div key={testimonial.id} className="testimonial-card">
             <h3 className="card-title">{testimonial.name}</h3>
-            <p>Rating: {testimonial.rating} stars</p>
-            <p>{testimonial.review}</p>
+            <p className="review">{testimonial.review}</p>
           </div>
         ))}
       </div>
@@ -25,4 +24,3 @@ function CustomersSay() {
 }
 
 export default CustomersSay;
-

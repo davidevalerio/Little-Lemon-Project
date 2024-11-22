@@ -5,9 +5,9 @@ import special3Image from '../images/lemon dessert.jpg'; // Adjust the path as n
 
 function Specials() {
   const specials = [
-    { id: 1, name: 'Special 1', description: 'Delicious special 1', image: special1Image },
-    { id: 2, name: 'Special 2', description: 'Delicious special 2', image: special2Image },
-    { id: 3, name: 'Special 3', description: 'Delicious special 3', image: special3Image },
+    { id: 1, name: 'Bruschetta', description: 'A classic Italian appetizer with toasted bread, fresh tomatoes, and basil.', image: special1Image },
+    { id: 2, name: 'Greek Salad', description: 'A refreshing and healthy salad with cucumbers, tomatoes, olives, feta cheese, and a tangy dressing.', image: special2Image },
+    { id: 3, name: 'Lemon Cheese Cake', description: 'A creamy and decadent dessert with a tangy lemon flavor.', image: special3Image },
   ];
 
   return (
